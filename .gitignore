@@ -1,28 +1,37 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
-# Precompiled Headers
-*.gch
-*.pch
+using namespace std;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+int main()
+{  string needle, haystack[51],a = "que";
+    int i = 0;
+    
+    cout << "Enter String to be found:" <<endl;
+    cin >> needle;
+    cout << "Enter array of strings." << endl; 
+    cout << "(write";
+    cout << " stop to terminate filling the array)";
+    
+    while (a != "stop"){
+        cin >> haystack[i];
+        a = haystack[i];
+        i++;
+    }
+    
+    for (i = 0; i < 50; i++){
+        a = haystack[i];
+        if (a == needle){
+            cout << "The was detected on";
+            cout << " position " << i ;
+            cout << " on the haystack"<< endl;
+            break;
+        }
+    }
+    if (a != needle){
+        cout << "No such string found." << endl;
+    }
+   
+   return 0;
+}
